@@ -9,7 +9,9 @@ Please go to egs/ folder, and see run.sh and inference_waveglow_vocoder.py for e
 
 ## Reference Materials
 [Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech](https://arxiv.org/abs/2105.06337)
+
 [Score-Based Generative Modeling through Stochastic Differential Equations](https://openreview.net/forum?id=PxTIG12RRHS)
+
 [score_sde_pytorch](https://github.com/yang-song/score_sde_pytorch)
 
 ## Authors
