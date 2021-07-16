@@ -16,6 +16,8 @@ Please go to egs/ folder, and see run.sh and inference_waveglow_vocoder.py for e
 
 [score_sde_pytorch](https://github.com/yang-song/score_sde_pytorch)
 
+[denoising-diffusion-pytorch](https://github.com/lucidrains/denoising-diffusion-pytorch)
+
 ## Authors
 Heyang Xue(https://github.com/WelkinYang) and Qicong Xie(https://github.com/QicongXie)
 
