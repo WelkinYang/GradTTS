@@ -29,7 +29,7 @@
       "mel_fmax": 8000.0,
       "add_noise": true,
       "add_blank": true,
-      "cmudict_path": "/apdcephfs/private_heyangxue/workspace/exp/glow-tts/data/cmu_dictionary"
+      "cmudict_path": "../../data/cmu_dictionary"
     },
     "model": {
       "hidden_channels": 192,
