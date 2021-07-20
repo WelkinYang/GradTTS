@@ -161,7 +161,7 @@ class DiffusionDecoder(nn.Module):
 
   def forward(self, mu, y=None, g=None, gen=False):
     if not gen:
-      t = torch.FloatTensor(y.shape[0]).uniform_(0, self.T).to(y.device)  # sample a random t
+      t = torch.FloatTensor(y.shape[0]).uniform_(0, self.T-self.delta_t).to(y.device)+self.delta_t  # sample a random t
       mean, std = self.marginal_prob(mu, y, t)
       z = torch.randn_like(y)
       x = mean + std[:, None, None] * z
