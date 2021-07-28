@@ -6,7 +6,7 @@ This is an unofficial implementation of GradTTS. We created this project based o
 
 ## Updates
 
-2021/07/28: [LJSpeech Samples](https://github.com/WelkinYang/GradTTS/tree/main/egs/gradtts_n_1000/n_1000_steps_259000_ljspeech_hifigan) uploaded which has the same performance as the original demo.
+2021/07/28: [LJSpeech Samples](https://github.com/WelkinYang/GradTTS/tree/main/egs/gradtts_n_1000/n_1000_steps_259000_ljspeech_hifigan) uploaded which has the same performance as the original paper's demo.
 
 ## Training and inference
 Please go to egs/ folder, and see run.sh and inference_waveglow_vocoder.py for example use. Before training, please download and extract the [LJ Speech dataset](https://keithito.com/LJ-Speech-Dataset/), then rename or create a link to the dataset folder: `ln -s /path/to/LJSpeech-1.1/wavs DUMMY`. And build Monotonic Alignment Search Code (Cython): `cd monotonic_align; python setup.py build_ext --inplace`.  Before inference, you should download waveglow checkpoint from [download_link](https://drive.google.com/file/d/1rpK8CzAAirq9sWZhe9nlfvxMF1dRgFbF/view) and put it into the waveglow folder.
