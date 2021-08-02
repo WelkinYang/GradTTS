@@ -172,7 +172,7 @@ class DiffusionDecoder(nn.Module):
         y_T = torch.randn_like(mu) + mu
         y_t_plus_one = y_T
         y_t = None
-        for n in tqdm(range(self.N - 1, -1, -1)):
+        for n in tqdm(range(self.N - 1, 0, -1)):
           t = torch.FloatTensor(1).fill_(n).to(mu.device)
           if g:
               x = torch.stack([y_t_plus_one, mu, g], 1)
