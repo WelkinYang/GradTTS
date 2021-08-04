@@ -105,7 +105,7 @@ def train(rank, epoch, hps, generator, optimizer_g, train_loader, logger, writer
     optimizer_g.zero_grad()
     
     grad_loss, (z_m, z_logs, z_mask), (attn, logw, logw_) = generator(x, x_lengths, y, y_lengths, gen=False)
-    l_mle = commons.mle_loss(y, z_m, torch.ones_like(z_m), z_mask) # z_logs is not used because we use N(mu, I) as the X_t
+    l_mle = commons.mle_loss(y, z_m, z_logs, z_mask) # z_logs is not used because we use N(mu, I) as the X_t
     l_length = commons.duration_loss(logw, logw_, x_lengths)
 
     loss_gs = [grad_loss, l_mle, l_length]
