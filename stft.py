@@ -65,7 +65,8 @@ class STFT(torch.nn.Module):
             assert(filter_length >= win_length)
             # get window and zero center pad it to filter_length
             fft_window = get_window(window, win_length, fftbins=True)
-            fft_window = pad_center(fft_window, filter_length)
+            fft_window = pad_center(fft_window, size=filter_length)
+            # fft_window = pad_center(fft_window)
             fft_window = torch.from_numpy(fft_window).float()
 
             # window the bases
@@ -104,7 +105,11 @@ class STFT(torch.nn.Module):
             real_part = []
             imag_part = []
             for y in x:
-                y_ = stft(y, self.filter_length, self.hop_length, self.win_length, self.window)
+                y_ = stft(
+                    y, n_fft=self.filter_length,
+                    hop_length=self.hop_length,
+                    win_length=self.win_length,
+                    window=self.window)
                 real_part.append(y_.real[None,:,:])
                 imag_part.append(y_.imag[None,:,:])
             real_part = np.concatenate(real_part, 0)
